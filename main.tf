@@ -1,11 +1,6 @@
-resource "aws_instance" "web_server" {
-  ami           = var.amazon_linux_ami
-  instance_type = var.instance_type
+module "vpc" {
+  source = "./modules/vpc"
+  environment = var.environment
+  azs = ["us-east-1a", "us-east-1b"]
 
-
-  tags = {
-    Environment = var.environment
-    Name        = "web_application_server"
-    Terraform   = "true"
-  }
 }
