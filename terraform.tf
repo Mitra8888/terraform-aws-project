@@ -5,11 +5,4 @@ terraform {
       version = "~> 5.0"
     }
   }
-  cloud {
-    organization = "mitra88-org"
-
-    workspaces {
-      name = "aws-infrastructure"
-    }
-  }
 }
